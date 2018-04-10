@@ -1,0 +1,62 @@
+<script>
+function removeGames(){
+	document.getElementById('gameListContainer').style.display="none";
+}
+
+function showGames(){
+	document.getElementById('gameListContainer').style.display="block";
+}
+
+function showGameFrame(){
+	document.getElementById('gameFrame1').style.display="block";
+}
+
+function hideGameFrame(){
+	document.getElementById('gameFrame1').style.display="none";
+}
+</script>
+
+<!--Game list box container-->
+<div class="gameListContainer" id="gameListContainer">
+	
+	<div class="page-header"  style=";text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
+		<h1><font face="Ubuntu,sans-serif" color="blue">GAMES</font></h1>
+	</div>
+
+	<!--Start Row 1-->
+	<div class="row">
+  		<div class="col-sm-3">
+  			<a href="https://cdn.htmlgames.com/TravelersQuest/" target="gameFrame1" onClick="removeGames();showGameFrame();">
+			<img class="gameIMG" src="https://cdn.htmlgames.com/TravelersQuest/img/icon/image-300x200.jpg">
+			</a>
+		</div>
+		<div class="col-sm-3">
+  			<a href="https://cdn.htmlgames.com/Mahjongg/" target="gameFrame1" onClick="removeGames();showGameFrame();">
+			<img class="gameIMG" src="https://cdn.htmlgames.com/Mahjongg/img/icon/image-300x200.jpg">
+			</a>
+		</div>
+		<div class="col-sm-3">
+  			<a href="https://cdn.htmlgames.com/DailyNet/" target="gameFrame1" onClick="removeGames();showGameFrame();">
+			<img class="gameIMG" src="https://cdn.htmlgames.com/DailyNet/img/icon/image-300x200.jpg">
+			</a>
+		</div>
+		<div class="col-sm-3">
+  			<a href="https://cdn.htmlgames.com/VegasPoker/" target="gameFrame1" onClick="removeGames();showGameFrame();">
+			<img class="gameIMG" src="https://cdn.htmlgames.com/VegasPoker/img/icon/image-300x200.jpg">
+			</a>		
+		</div>
+	</div>
+	<!--End Row 1-->	
+	
+	<ul class="nav nav-pills" style="top:120;position:relative;margin:auto;display:block;">
+	  	<li><a href="/index"><button type="button" class="btn btn-primary">Home</button></a></li>
+	    <li><a href="/feed"><button type="button" class="btn btn-primary">Feeds</button></a></li>
+	    <li><a href="#"><button type="button" class="btn btn-primary">Rankings</button></a></li>
+  	</ul>
+
+
+</div>
+<!--End Game List Box Container-->
+	
+<!--Frame to display game being played-->
+<iframe id="gameFrame1" class="gameFrame1" frameborder="0" name="gameFrame1" style="display:none;"></iframe>
