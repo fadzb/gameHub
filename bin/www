@@ -5,8 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('healthee:server');
+var debug = require('debug')('gameHub:server');
 var http = require('http');
+
 
 /**
  * Get port from environment and store in Express.

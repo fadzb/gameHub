@@ -10,6 +10,38 @@
   <li><a href="/games">Games</a></li>
   <li><a href="/feed">Feeds</a></li>
   <li><a href="#">Rankings</a></li>
+  <li><a href="" id="dnperm">Notifications</a></li>
+  <li><a href="/chat">Live Chat</a></li>
 </ul>
 
+	<script>
+			var dnperm = document.getElementById('dnperm');
+			var dntrigger = document.getElementById('dntrigger');
+
+			dnperm.addEventListener('click', function(e){
+				e.preventDefault();
+				if(!window.Notification){
+					alert('Notifactions not supported.');
+				}else{
+					Notification.requestPermission(function(p){
+						console.log();
+						if(p === 'granted'){
+							alert('Thank you for turning on notifications');
+						}
+					});
+				}
+			});
+
+			//simulate
+			dntrigger.addEventListener('click', function(e){
+				var notify;
+
+				e.preventDefault();
+				if(Notification.permission === 'default'){
+					alert('show');
+				}else{
+					notify = new Notification ('New message from Page');
+				}
+			});
+	</script>
 </div>

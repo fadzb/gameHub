@@ -4,8 +4,10 @@ var Comment = require('../models/comments');
 var User = require('../models/users');
 var jwt = require('jsonwebtoken');
 
-
-
+/* GET live chat page. */
+router.get('/chat', function(req, res, next) {
+  res.render('chat', { title: 'Express' });
+});
 
 
 
