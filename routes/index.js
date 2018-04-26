@@ -4,9 +4,24 @@ var Comment = require('../models/comments');
 var User = require('../models/users');
 var jwt = require('jsonwebtoken');
 
+/* GET live chat page. */
+router.get('/chat', function(req, res, next) {
+  res.render('chat', { title: 'Express' });
+});
+
+//Get rankings page
+router.get('/rankings', function(req, res, next) {
+  res.render('rankings', { title: 'Express' });
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+});
+
+/* GET test page. */
+router.get('/test', function(req, res, next) {
+  res.render('test', { title: 'Express' });
 });
 
 /* GET member page. */
@@ -79,11 +94,23 @@ router.get('/getUsers', function(req, res, next) {
     });
 });
 
-//get USER
+
+//get USER by id
 router.get('/getUser/:id', function(req, res, next) {
     var id = req.params.id;
 
     User.find({_id:id}, function (err, user) {
+        if (err)
+            res.send(err);
+        res.json(user);
+    });
+});
+
+//get USER by name
+router.get('/getUserByName/:username', function(req, res, next) {
+    var username = req.params.username;
+
+    User.find({user_name:username}, function (err, user) {
         if (err)
             res.send(err);
         res.json(user);

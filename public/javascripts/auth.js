@@ -1,8 +1,10 @@
 $(document).ready(
+
     function() {        
         /**
          * Event handler for when the user attempts to register
          */
+
         $("#reg-form").submit(function (event) {
             event.preventDefault();
             $.ajax({
@@ -38,6 +40,7 @@ $(document).ready(
                 },
                 success: function(token){    
                      $(location).attr('href', '/member' ); // Redirect to member  page
+
                 },
                 error: function(errMsg) {
                     swal(
@@ -48,6 +51,9 @@ $(document).ready(
                 }
             });
         });
+
+        
+
 
     $("#logout").click(function (event) {
         Cookies.remove('Authorization');            
